@@ -16,11 +16,14 @@ import (
 
 // CacheTable is a table within the cache
 type CacheTable struct {
+	// 读写锁
 	sync.RWMutex
 
 	// The table's name.
+	// table 名字
 	name string
 	// All cached items.
+	// CacheItem 数组
 	items map[interface{}]*CacheItem
 
 	// Timer responsible for triggering cleanup.
